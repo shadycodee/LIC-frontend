@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #89343b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(160, 90, 96, 0.8);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 90, 96, 0.8);
+}
+
+.containerDashboard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1;
+  min-height: 50vh;
+  height: 150px;
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: url('images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 300%;
+  min-width: 100%;
+  height: 150px;
+}
+
+.sheet-colored {
+  background-color: transparent;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-image: url('images/gui_logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  margin-right: 20px;
+}
+
+.header-content {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+  padding: 0 8px;
+  justify-content: flex-end;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding-right: 50px;
+}
+
+.search-input {
+  display: flex;
+  font-size: 13px;
+  height: 20px;
+  border: 2px solid #89343b;
+  width: 250px;
+}
+
+.logout {
+  border-radius: 50%;
+  height: 50px;
+  background-color: transparent;
+
+}
+
+.hello-world-container {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.hello-world-content {
+  flex: 1;
+  text-align: center;
+}
+
+.button-group {
+  display: flex;
+  gap: 5px;
+  /* Adjust this value to control space between buttons */
+}
+
+
+.menu-button,
+.analytics-button {
+  transition: all 0.3s ease;
+  color: white;
+  background-color: #89343b;
+}
+
+.menu-button:hover,
+.analytics-button:hover {
+  color: #89343b;
+  background-color: white;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.analytics-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: -80%;
+  left: 50%;
+  margin-left: -80px;
+  opacity: 5;
+  transition: opacity 0.3s;
+  font-size: 10px;
+}
+
+.analytics-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.student-table {
+  width: 90%;
+  overflow: hidden;
+  border-spacing: 0;
+  background: white;
+  font-size: 13px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border-radius: 5px;
+}
+
+.student-table th,
+.student-table td {
+  border-bottom: 1px solid #89343b;
+  padding: 8px;
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.student-table th {
+  background: linear-gradient(181.2deg, rgba(137, 52, 59, 1) 24.8%, rgba(198, 194, 149, 1) 80.5%);
+  color: rgb(0, 0, 0);
+  font-size: 13px;
+  border-top: 1px solid #89343b;
+  height: 30px;
+}
+
+.student-table td {
+  border-right: none;
+}
+
+.student-table tr:last-child td {
+  border-bottom: none;
+}
+
+.student-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.actions-header {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  padding: 5px;
+}
+
+.tables {
+  padding: 16px;
+  width: 100%;
+  margin-left: 9%;
+  margin-top: 30px;
+}
+
+.studentlist {
+  font-size: 10px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.table-wrapper {
+  position: relative;
+  /* Positioning context for the pagination controls */
+}
+
+.pagination {
+  display: flex;
+  margin-bottom: 10px;
+  margin-left: 157vh;
+}
+
+.pagination button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  /* Rounded corners */
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 0 5px;
+  padding: 5px 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #ddd;
+}
+
+.pagination .active {
+  background-color: #89343b;
+  color: white;
+  border-color: #89343b;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
