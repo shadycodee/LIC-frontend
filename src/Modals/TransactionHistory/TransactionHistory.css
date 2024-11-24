@@ -1,0 +1,73 @@
+.transactionHistory_modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.transactionHistory_modal-content {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  /* Adjust as needed */
+  position: relative;
+  max-height: 80vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  /* Ensure padding is included in width */
+}
+
+.transactionHistory_modal-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1010;
+  /* Ensure it’s on top of the modal content */
+  pointer-events: auto;
+  /* Ensure it can be clicked */
+}
+
+.transactionHistory_modal-close:hover {
+  color: white;
+  background-color: #89343b;
+}
+
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.transaction-list {
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+}
+
+.transaction-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-list li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
