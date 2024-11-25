@@ -12,6 +12,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState({ username: false, password: false });
   const { enqueueSnackbar } = useSnackbar();
+  const API_URL = process.env.REACT_APP_API_URL;
+
 
   const handleLogin = async () => {
     if (!username || !password) {
@@ -28,7 +30,7 @@ const Login = () => {
     }
     try {
       const csrfToken = getCookie('csrftoken');
-      const response = await axios.post("http://localhost:8000/api/login-admin/", {
+      const response = await axios.post("${API_URL}/api/login-admin/", {
         username,
         password,
       }, {
