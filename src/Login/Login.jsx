@@ -30,6 +30,7 @@ const Login = () => {
     }
     try {
       const csrfToken = getCookie('csrftoken');
+      console.log('API URL:', process.env.REACT_APP_API_URL);
       const response = await axios.post(`${API_URL}/api/login-admin/`, {
         username,
         password,
