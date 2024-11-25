@@ -30,7 +30,7 @@ const Login = () => {
     }
     try {
       const csrfToken = getCookie('csrftoken');
-      const response = await axios.post("${API_URL}/api/login-admin/", {
+      const response = await axios.post(`${API_URL}/api/login-admin/`, {
         username,
         password,
       }, {
