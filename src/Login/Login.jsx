@@ -12,7 +12,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState({ username: false, password: false });
   const { enqueueSnackbar } = useSnackbar();
-  const API_URL = process.env.REACT_APP_API_URL;
 
 
   const handleLogin = async () => {
@@ -31,7 +30,7 @@ const Login = () => {
     try {
       const csrfToken = getCookie('csrftoken');
       console.log('API URL:', process.env.REACT_APP_API_URL);
-      const response = await axios.post(`${API_URL}/api/login-admin/`, {
+      const response = await axios.post("https://lic-backend-f65697da89f2.herokuapp.com/api/login-admin/", {
         username,
         password,
       }, {
