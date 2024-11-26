@@ -65,7 +65,7 @@ const Header = ({ username }) => {
       }
 
       const response = await axios.post(
-        "http://localhost:8000/api/logout/",
+        "https://lic-backend-f65697da89f2.herokuapp.com/api/logout/",
         {},
         {
           headers: {

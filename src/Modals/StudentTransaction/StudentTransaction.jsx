@@ -38,7 +38,7 @@ const StudentTransaction = ({ isOpen, onClose, studentID, onTransactionCompleted
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/transactions/create/', formData, {
+      const response = await axios.post('https://lic-backend-f65697da89f2.herokuapp.com/api/transactions/create/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

@@ -29,7 +29,7 @@ const ImportStudents = ({ isOpen, onClose, username }) => {  // Add username pro
 
     try {
       console.log("Logging activity with data: ", logData);
-      await axios.post('http://localhost:8000/api/activity-logs/', logData);
+      await axios.post('https://lic-backend-f65697da89f2.herokuapp.com/api/activity-logs/', logData);
       console.log("Activity logged successfully");
     } catch (error) {
       console.error("Error logging activity:", error.response?.data || error.message);
@@ -94,7 +94,7 @@ const ImportStudents = ({ isOpen, onClose, username }) => {  // Add username pro
       console.log("Parsed students JSON:", JSON.stringify(students, null, 2)); // Debug: Log the JSON
 
       try {
-        const response = await axios.post('http://localhost:8000/api/import-student/', students, {
+        const response = await axios.post('https://lic-backend-f65697da89f2.herokuapp.com/api/import-student/', students, {
           headers: {
             'Content-Type': 'application/json',
           },

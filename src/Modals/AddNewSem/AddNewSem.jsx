@@ -23,7 +23,7 @@ const AddNewSem = ({ isOpen, onClose}) => {
 
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://localhost:8000/api/semesters/', {
+            const response = await fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/semesters/', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

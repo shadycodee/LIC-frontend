@@ -55,7 +55,7 @@ const Settings = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.put("http://localhost:8000/api/change-password/", 
+      const response = await axios.put("https://lic-backend-f65697da89f2.herokuapp.com/api/change-password/", 
         {
           current_password: currentPassword,
           new_password: newPassword,

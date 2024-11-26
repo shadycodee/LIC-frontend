@@ -16,7 +16,7 @@ const StudentHistory = ({ isOpen, onClose, studentID }) => {
     const fetchHistory = async () => {
         setError('');
         try {
-            const response = await axios.get(`http://localhost:8000/api/sessions/${studentID}/`);
+            const response = await axios.get(`https://lic-backend-f65697da89f2.herokuapp.com/api/sessions/${studentID}/`);
             console.log('Fetched sessions:', response.data); 
 
             // Sort sessions by date (newest first)

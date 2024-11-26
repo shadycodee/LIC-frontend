@@ -43,7 +43,7 @@ const AddStudent = ({ isOpen, onClose, onStudentAdded }) => {
     };
 
     try {
-      const response = await axios.post('http://localhost:8000/api/students/', newStudent);
+      const response = await axios.post('https://lic-backend-f65697da89f2.herokuapp.com/api/students/', newStudent);
       console.log('Student added successfully:', response.data);
 
       onStudentAdded(); 

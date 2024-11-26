@@ -16,7 +16,7 @@ const TransactionHistory = ({ isOpen, onClose }) => {
   const fetchTransactions = async () => {
     setError('');
     try {
-      const response = await axios.get('http://localhost:8000/api/transactions/');
+      const response = await axios.get('https://lic-backend-f65697da89f2.herokuapp.com/api/transactions/');
       console.log('Fetched transactions:', response.data); 
 
       const sortedTransactions = response.data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));

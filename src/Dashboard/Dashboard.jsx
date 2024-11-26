@@ -126,7 +126,7 @@ export default function Dashboard() {
   
     setActivityLogs((prevLogs) => [...prevLogs, newLog]);
   
-    axios.post('http://localhost:8000/api/activity-logs/', newLog)
+    axios.post('https://lic-backend-f65697da89f2.herokuapp.com/api/activity-logs/', newLog)
       .then(() => {
         console.log("Activity logged successfully.");
       })
@@ -140,7 +140,7 @@ export default function Dashboard() {
   const fetchStudents = () => {
     setLoading(true);
     axios
-      .get("http://localhost:8000/api/students/")
+      .get("https://lic-backend-f65697da89f2.herokuapp.com/api/students/")
       .then((response) => {
         const fetchedStudents = response.data.map((student) => ({
           ...student,
@@ -205,7 +205,7 @@ export default function Dashboard() {
     };
 
     axios
-      .patch(`http://localhost:8000/api/students/${encodedStudentID}/`, updateData) 
+      .patch(`https://lic-backend-f65697da89f2.herokuapp.com/api/students/${encodedStudentID}/`, updateData) 
       .then((response) => {
         console.log("Status updated successfully:", response.data);
         fetchStudents();

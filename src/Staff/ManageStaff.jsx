@@ -35,7 +35,7 @@ const ManageStaff = () => {
 
   const fetchStaffList = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/staffview/'); 
+      const response = await fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/staffview/'); 
       if (!response.ok) {
         throw new Error('Network response was not ok: ' + response.statusText);
       }
@@ -54,7 +54,7 @@ const ManageStaff = () => {
 
   const handleAddStaff = async (newStaff) => {
     try {
-      const response = await fetch('http://localhost:8000/api/create-user/', {
+      const response = await fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/create-user/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const ManageStaff = () => {
   };
 
   const fetchActivityLogs = (username) => {
-    fetch(`http://localhost:8000/api/logs/${username}/`)
+    fetch(`https://lic-backend-f65697da89f2.herokuapp.com/api/logs/${username}/`)
       .then((response) => {
         if (!response.ok) {
           console.log('Failed Fetching')
@@ -117,7 +117,7 @@ const ManageStaff = () => {
 
   const logActivity = async (username, action) => {
     try {
-      await fetch(`http://localhost:8000/api/activity-logs/`, { 
+      await fetch(`https://lic-backend-f65697da89f2.herokuapp.com/api/activity-logs/`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -139,7 +139,7 @@ const ManageStaff = () => {
     }
     
     try {
-      const response = await fetch(`http://localhost:8000/api/update-status/${username}/`, {
+      const response = await fetch(`https://lic-backend-f65697da89f2.herokuapp.com/api/update-status/${username}/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
