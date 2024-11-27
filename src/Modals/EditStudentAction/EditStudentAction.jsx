@@ -15,7 +15,7 @@ export default function EditStudentModal({ isOpen, onClose, studentID, username 
             const fetchPasswordStatus = async () => {
                 try {
                     setIsLoading(true);
-                    const response = await axios.get(`/students/${studentID}/password/`);
+                    const response = await axios.get(`https://lic-backend-f65697da89f2.herokuapp.com/students/${studentID}/password/`);
                     setCurrentPasswordIsDefault(response.data.is_default);
                 } catch (error) {
                     console.error("Error fetching password status:", error.response ? error.response.data : error.message);
