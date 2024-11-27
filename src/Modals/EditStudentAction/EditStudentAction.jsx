@@ -41,7 +41,7 @@ export default function EditStudentModal({ isOpen, onClose, studentID, username 
         onClose(); 
     } catch (error) {
         if (error.response && error.response.data.message === 'Current password is already the default.') {
-            enqueueSnackbar('The password is already set to default', { variant: 'success' });
+            enqueueSnackbar('The password is already set to default', { variant: 'error' });
             onClose();
         } else {
             enqueueSnackbar('Error resetting password', { variant: 'error' });
