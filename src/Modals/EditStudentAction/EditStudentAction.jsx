@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import './EditStudentAction.css';
 import axios from 'axios';
 import { useSnackbar } from 'notistack';
@@ -8,27 +8,6 @@ export default function EditStudentModal({ isOpen, onClose, studentID, username 
     const [isLoading, setIsLoading] = useState(false);
     const [currentPasswordIsDefault, setCurrentPasswordIsDefault] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
-
-
-    useEffect(() => {
-        if (isOpen && studentID) {
-            const fetchPasswordStatus = async () => {
-                try {
-                    setIsLoading(true);
-                    const response = await axios.get(`https://lic-backend-f65697da89f2.herokuapp.com/students/${studentID}/password/`);
-                    setCurrentPasswordIsDefault(response.data.is_default);
-                } catch (error) {
-                    console.error("Error fetching password status:", error.response ? error.response.data : error.message);
-                    enqueueSnackbar('Failed to fetch password status', { variant: 'error' });
-                } finally {
-                    setIsLoading(false);
-                }
-            };
-
-            fetchPasswordStatus();
-        }
-    }, [isOpen, studentID]);
-
 
 
     const logActivity = async (action, username) => {
