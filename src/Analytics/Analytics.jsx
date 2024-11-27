@@ -13,7 +13,7 @@ const Analytics = () => {
 
   useEffect(() => {
     // Fetch the active users count from the backend
-    fetch('http://localhost:8000/api/active_users/')
+    fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/active_users/')
       .then((response) => response.json())
       .then((data) => {
         if (!data.error) {
@@ -25,7 +25,7 @@ const Analytics = () => {
 
   useEffect(() => {
     // Fetch the logged-in count from the backend
-    fetch('http://localhost:8000/api/count_loggedin/')
+    fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/count_loggedin/')
       .then((response) => response.json())
       .then((data) => {
         // Update the state with the fetched count
@@ -36,7 +36,7 @@ const Analytics = () => {
 
   useEffect(() => {
     // Fetch the semester data from the API
-    fetch('http://localhost:8000/api/semesters/')
+    fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/semesters/')
       .then((response) => response.json())
       .then((data) => {
         if (!data.error) {
