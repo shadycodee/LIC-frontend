@@ -18,7 +18,7 @@ const AnalyticsChart = ({ year, semester }) => {
   // Fetch Transaction Income
   const fetchTransactionIncome = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/transaction-income/`, {
+      const response = await axios.get(`https://lic-backend-f65697da89f2.herokuapp.com/api/transaction-income/`, {
         params: { year, semester }
       });
       const formattedData = response.data.map(item => ({
@@ -34,7 +34,7 @@ const AnalyticsChart = ({ year, semester }) => {
   // Fetch Session Hours
   const fetchSessionHours = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/session-hours/`, {
+      const response = await axios.get(`https://lic-backend-f65697da89f2.herokuapp.com/api/session-hours/`, {
         params: { year, semester }
       });
       const formattedData = response.data.map(item => ({

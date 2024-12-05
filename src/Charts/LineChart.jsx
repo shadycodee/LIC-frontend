@@ -19,7 +19,7 @@ const LoadPayments = () => {
 
   useEffect(() => {
     // Fetch data from the backend
-    axios.get('http://localhost:8000/api/courses-count/') // Replace with your actual endpoint
+    axios.get('https://lic-backend-f65697da89f2.herokuapp.com/api/courses-count/') // Replace with your actual endpoint
       .then(response => {
         const fetchedData = response.data.data;
 

@@ -58,7 +58,7 @@ const PreviousLineChart = () => {
 
     const fetchTransactionIncome = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/previous-income/`, {
+            const response = await axios.get(`https://lic-backend-f65697da89f2.herokuapp.com/api/previous-income/`, {
                 params: { year, semester_name }
             });
             const formattedData = response.data.map(item => ({
@@ -73,7 +73,7 @@ const PreviousLineChart = () => {
 
     const fetchSessionHours = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/previous-session/`, {
+            const response = await axios.get(`https://lic-backend-f65697da89f2.herokuapp.com/api/previous-session/`, {
                 params: { year, semester_name }
             });
             const formattedData = response.data.map(item => ({
@@ -90,7 +90,7 @@ const PreviousLineChart = () => {
     const handleSubmit = async () => {
         if (chartType === 'line') {
             try {
-                const response = await axios.get('http://localhost:8000/api/previous-count/', {
+                const response = await axios.get('https://lic-backend-f65697da89f2.herokuapp.com/api/previous-count/', {
                     params: { year, semester_name },
                 });
                 const fetchedData = response.data.data;
