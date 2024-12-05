@@ -115,7 +115,17 @@ const Header = ({ username }) => {
               zIndex: 1000,
             }}
           >
-            <Box className="logo" />
+            <Box sx={{
+              display: "flex",
+              alignItems: "center",
+              width: "70px",
+              height: "70px",
+              backgroundImage: "url('/images/gui_logo.png')",
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "left center",
+              marginRight: "20px",
+            }} />
             <Typography
               component="div"
               sx={{
