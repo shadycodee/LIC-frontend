@@ -15,7 +15,7 @@ const LoadPayments = () => {
   const [data, setData] = useState([]);
   const [selectedCourses, setSelectedCourses] = useState({});
   const [courseColors, setCourseColors] = useState({});
-  const [selectAll, setSelectAll] = useState(false); // State for "Select All" checkbox
+  const [selectAll, setSelectAll] = useState(true); // State for "Select All" checkbox
 
   useEffect(() => {
     // Fetch data from the backend
@@ -76,7 +76,7 @@ const LoadPayments = () => {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent:'space-between'}}>
-      <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Course Session Frequency by Month</h2> {/* Title */}
+      <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#8C383E' }}>Course Session Frequency by Month</h2> {/* Title */}
       {/* Select All / Deselect All checkbox */}
       <FormControlLabel
           control={
