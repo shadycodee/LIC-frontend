@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 
 const ExportButton = () => {
     const handleExport = () => {
-        fetch('http://localhost:8000/api/export/')  // Adjust with your Django backend URL
+        fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/export/')  // Adjust with your Django backend URL
             .then(response => {
                 if (response.ok) {
                     return response.blob();
