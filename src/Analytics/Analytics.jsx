@@ -5,6 +5,7 @@ import BarChart from '../Charts/BarChart.jsx';
 import LineChart from '../Charts/LineChart.jsx';
 import './Analytics.css';
 import { Link } from 'react-router-dom';
+import ExportButton from '../Components/ExportButton.jsx';
 
 const Analytics = () => {
   const [semester, setSemester] = useState({ year: '', semester_name: '' });
@@ -51,9 +52,13 @@ const Analytics = () => {
 
      
     <div className='headerMenu'>
-    <Box sx={{ display: 'flex', justifyContent: 'space-between', padding: 1, margin: 4 }}>
+    <Box sx={{ display: 'flex', justifyContent: 'space-between', padding: 1, margin: 4, }}>
         <Typography variant="h4" gutterBottom sx={{ color: '#8C383E', fontWeight: 'bold' }}>SY: {semester.year} {semester.semester_name} </Typography>
-        <Link to="/compare_analytics"><Button variant="contained" sx={{backgroundColor:'#8C383E'}} >Compare</Button></Link>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '220px'}}>
+          <Link to="/compare_analytics"><Button variant="contained" sx={{backgroundColor:'#8C383E'}} >Compare</Button></Link>
+          <ExportButton/>
+        </Box>
+        
       </Box>
     </div>
       
