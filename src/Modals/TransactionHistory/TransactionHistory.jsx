@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './TransactionHistory.css';
+import apiUrl from '../../config';
 import { Typography } from '@mui/joy';
 
 const TransactionHistory = ({ isOpen, onClose }) => {
@@ -16,7 +17,7 @@ const TransactionHistory = ({ isOpen, onClose }) => {
   const fetchTransactions = async () => {
     setError('');
     try {
-      const response = await axios.get('https://lic-backend-f65697da89f2.herokuapp.com/api/transactions/');
+      const response = await axios.get(`${apiUrl}/api/transactions/`);
       console.log('Fetched transactions:', response.data); 
 
       const sortedTransactions = response.data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));

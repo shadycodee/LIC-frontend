@@ -4,6 +4,7 @@ import { Button, Box, Typography } from '@mui/material';
 import BarChart from '../Charts/BarChart.jsx';
 import LineChart from '../Charts/LineChart.jsx';
 import './Analytics.css';
+import apiUrl from '../../config';
 import { Link } from 'react-router-dom';
 import ExportButton from '../Components/ExportButton.jsx';
 
@@ -14,7 +15,7 @@ const Analytics = () => {
 
   useEffect(() => {
     // Fetch the active users count from the backend
-    fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/active_users/')
+    fetch(`${apiUrl}/api/active_users/`)
       .then((response) => response.json())
       .then((data) => {
         if (!data.error) {
@@ -26,7 +27,7 @@ const Analytics = () => {
 
   useEffect(() => {
     // Fetch the logged-in count from the backend
-    fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/count_loggedin/')
+    fetch(`${apiUrl}/api/count_loggedin/`)
       .then((response) => response.json())
       .then((data) => {
         // Update the state with the fetched count
@@ -37,7 +38,7 @@ const Analytics = () => {
 
   useEffect(() => {
     // Fetch the semester data from the API
-    fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/semesters/')
+    fetch(`${apiUrl}/api/semesters/`)
       .then((response) => response.json())
       .then((data) => {
         if (!data.error) {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './EditStudentAction.css';
 import axios from 'axios';
+import apiUrl from '../../config';
 import { useSnackbar } from 'notistack';
 
 
@@ -20,7 +21,7 @@ export default function EditStudentModal({ isOpen, onClose, studentID, username 
         try {
             console.log("Logging activity with data: ", logData);  // For debugging
             // Ensure this is hitting the correct backend endpoint
-            await axios.post('https://lic-backend-f65697da89f2.herokuapp.com/api/activity-logs/', logData);
+            await axios.post(`${apiUrl}/api/activity-logs/`, logData);
             console.log("Activity logged successfully");
         } catch (error) {
             console.error("Error logging activity:", error.response?.data || error.message);
@@ -31,7 +32,7 @@ export default function EditStudentModal({ isOpen, onClose, studentID, username 
 
   const handleResetPassword = async () => {
     try {
-        const response = await axios.post(`https://lic-backend-f65697da89f2.herokuapp.com/api/students/${studentID}/reset-password/`);
+        const response = await axios.post(`${apiUrl}/api/students/${studentID}/reset-password/`);
         enqueueSnackbar('Password reset successful!', { variant: 'success' });
         
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AddStudent.css';
+import apiUrl from '../../config';
 import { useSnackbar } from 'notistack';
 
 const AddStudent = ({ isOpen, onClose, onStudentAdded }) => {
@@ -43,7 +44,7 @@ const AddStudent = ({ isOpen, onClose, onStudentAdded }) => {
     };
 
     try {
-      const response = await axios.post('https://lic-backend-f65697da89f2.herokuapp.com/api/students/', newStudent);
+      const response = await axios.post(`${apiUrl}/api/students/`, newStudent);
       console.log('Student added successfully:', response.data);
 
       onStudentAdded(); 

@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList } from 'recharts';
 import { Checkbox, FormControlLabel } from '@mui/material'; // Importing Material UI components
 import axios from 'axios';
+import apiUrl from '../../config';
+
 
 // Updated color palette with 20 colors
 const COLORS = [
@@ -19,7 +21,7 @@ const LoadPayments = () => {
 
   useEffect(() => {
     // Fetch data from the backend
-    axios.get('https://lic-backend-f65697da89f2.herokuapp.com/api/courses-count/') // Replace with your actual endpoint
+    axios.get(`${apiUrl}/api/courses-count/`) // Replace with your actual endpoint
       .then(response => {
         const fetchedData = response.data.data;
 

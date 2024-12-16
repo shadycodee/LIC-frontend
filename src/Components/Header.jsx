@@ -5,6 +5,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useNavigate, useLocation } from 'react-router-dom';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import axios from 'axios';
+import apiUrl from '../../config';
 import { getCookie } from "../utils/utils";
 import { useSnackbar } from 'notistack';
 
@@ -65,7 +66,7 @@ const Header = ({ username }) => {
       }
 
       const response = await axios.post(
-        "https://lic-backend-f65697da89f2.herokuapp.com/api/logout/",
+        `${apiUrl}/api/logout/`,
         {},
         {
           headers: {

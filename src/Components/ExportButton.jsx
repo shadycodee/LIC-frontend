@@ -1,9 +1,10 @@
 import React from 'react';
+import apiUrl from '../../config';
 import Button from '@mui/material/Button';
 
 const ExportButton = () => {
     const handleExport = () => {
-        fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/export/')  // Adjust with your Django backend URL
+        fetch(`${apiUrl}/api/export/`)  // Adjust with your Django backend URL
             .then(response => {
                 if (response.ok) {
                     return response.blob();

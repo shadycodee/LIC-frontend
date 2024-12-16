@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import apiUrl from '../../config';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Typography, Box, Button } from '@mui/material';
 
@@ -18,7 +19,7 @@ const AnalyticsChart = ({ year, semester }) => {
   // Fetch Transaction Income
   const fetchTransactionIncome = async () => {
     try {
-      const response = await axios.get(`https://lic-backend-f65697da89f2.herokuapp.com/api/transaction-income/`, {
+      const response = await axios.get(`${apiUrl}/api/transaction-income/`, {
         params: { year, semester }
       });
       const formattedData = response.data.map(item => ({
@@ -34,7 +35,7 @@ const AnalyticsChart = ({ year, semester }) => {
   // Fetch Session Hours
   const fetchSessionHours = async () => {
     try {
-      const response = await axios.get(`https://lic-backend-f65697da89f2.herokuapp.com/api/session-hours/`, {
+      const response = await axios.get(`${apiUrl}/api/session-hours/`, {
         params: { year, semester }
       });
       const formattedData = response.data.map(item => ({

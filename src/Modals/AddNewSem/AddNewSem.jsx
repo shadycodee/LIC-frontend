@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './AddNewSem.css';
+import apiUrl from '../../config';
 import { useSnackbar } from 'notistack';
 
 
@@ -23,7 +24,7 @@ const AddNewSem = ({ isOpen, onClose}) => {
 
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/semesters/', {
+            const response = await fetch(`${apiUrl}/api/semesters/`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

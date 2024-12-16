@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Typography } from '@mui/joy';
 import axios from 'axios';
+import apiUrl from '../../config';
+
 import './StudentHistory.css';
 
 const StudentHistory = ({ isOpen, onClose, studentID }) => {
@@ -16,7 +18,7 @@ const StudentHistory = ({ isOpen, onClose, studentID }) => {
     const fetchHistory = async () => {
         setError('');
         try {
-            const response = await axios.get(`https://lic-backend-f65697da89f2.herokuapp.com/api/sessions/${studentID}/`);
+            const response = await axios.get(`${apiUrl}/api/sessions/${studentID}/`);
             console.log('Fetched sessions:', response.data); 
 
             // Sort sessions by date (newest first)

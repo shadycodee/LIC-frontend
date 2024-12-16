@@ -5,6 +5,7 @@ import axios from "axios";
 import styles from "./Login.module.css";
 import { getCookie } from '../utils/utils';
 import { useSnackbar } from 'notistack';
+import apiUrl from "../config";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,8 +30,7 @@ const Login = () => {
     }
     try {
       const csrfToken = getCookie('csrftoken');
-      console.log('API URL:', process.env.REACT_APP_API_URL);
-      const response = await axios.post("https://lic-backend-f65697da89f2.herokuapp.com/api/login-admin/", {
+      const response = await axios.post(`${apiUrl}/api/login-admin/`, {
         username,
         password,
       }, {

@@ -16,6 +16,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchIcon from "@mui/icons-material/Search";
 import Input from "@mui/joy/Input";
 import { useSnackbar } from 'notistack';
+import apiUrl from "../config";
 
 const ManageStaff = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,7 +36,7 @@ const ManageStaff = () => {
 
   const fetchStaffList = async () => {
     try {
-      const response = await fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/staffview/'); 
+      const response = await fetch(`${apiUrl}/api/staffview/`); 
       if (!response.ok) {
         throw new Error('Network response was not ok: ' + response.statusText);
       }
@@ -54,7 +55,7 @@ const ManageStaff = () => {
 
   const handleAddStaff = async (newStaff) => {
     try {
-      const response = await fetch('https://lic-backend-f65697da89f2.herokuapp.com/api/create-user/', {
+      const response = await fetch(`${apiUrl}/api/create-user/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +77,7 @@ const ManageStaff = () => {
   };
 
   const fetchActivityLogs = (username) => {
-    fetch(`https://lic-backend-f65697da89f2.herokuapp.com/api/logs/${username}/`)
+    fetch(`${apiUrl}/api/logs/${username}/`)
       .then((response) => {
         if (!response.ok) {
           console.log('Failed Fetching')
@@ -117,7 +118,7 @@ const ManageStaff = () => {
 
   const logActivity = async (username, action) => {
     try {
-      await fetch(`https://lic-backend-f65697da89f2.herokuapp.com/api/activity-logs/`, { 
+      await fetch(`${apiUrl}/api/activity-logs/`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -139,7 +140,7 @@ const ManageStaff = () => {
     }
     
     try {
-      const response = await fetch(`https://lic-backend-f65697da89f2.herokuapp.com/api/update-status/${username}/`, {
+      const response = await fetch(`${apiUrl}/api/update-status/${username}/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

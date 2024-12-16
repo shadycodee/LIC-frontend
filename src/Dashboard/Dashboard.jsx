@@ -25,6 +25,7 @@ import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import Header from '../Components/Header.jsx';
 import Confirmation from '../Modals/Confirmation/Confirmation.jsx';
 import { useSnackbar } from 'notistack';
+import apiUrl from "../config";
 
 import { useParams } from 'react-router-dom';
 
@@ -126,7 +127,7 @@ export default function Dashboard() {
   
     setActivityLogs((prevLogs) => [...prevLogs, newLog]);
   
-    axios.post('https://lic-backend-f65697da89f2.herokuapp.com/api/activity-logs/', newLog)
+    axios.post(`${apiUrl}/api/activity-logs/`, newLog)
       .then(() => {
         console.log("Activity logged successfully.");
       })
@@ -140,7 +141,7 @@ export default function Dashboard() {
   const fetchStudents = () => {
     setLoading(true);
     axios
-      .get("https://lic-backend-f65697da89f2.herokuapp.com/api/students/")
+      .get(`${apiUrl}/api/students/`)
       .then((response) => {
         const fetchedStudents = response.data.map((student) => ({
           ...student,
@@ -205,7 +206,7 @@ export default function Dashboard() {
     };
 
     axios
-      .patch(`https://lic-backend-f65697da89f2.herokuapp.com/api/students/${encodedStudentID}/`, updateData) 
+      .patch(`${apiUrl}/api/students/${encodedStudentID}/`, updateData) 
       .then((response) => {
         console.log("Status updated successfully:", response.data);
         fetchStudents();
