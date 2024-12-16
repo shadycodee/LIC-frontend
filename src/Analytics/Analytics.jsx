@@ -4,7 +4,7 @@ import { Button, Box, Typography } from '@mui/material';
 import BarChart from '../Charts/BarChart.jsx';
 import LineChart from '../Charts/LineChart.jsx';
 import './Analytics.css';
-import apiUrl from '../../config';
+import apiUrl from '../config.js';
 import { Link } from 'react-router-dom';
 import ExportButton from '../Components/ExportButton.jsx';
 

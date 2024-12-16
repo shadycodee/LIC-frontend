@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList } from 'recharts';
 import { Checkbox, FormControlLabel } from '@mui/material'; // Importing Material UI components
 import axios from 'axios';
-import apiUrl from '../../config';
+import apiUrl from '../config';
 
 
 // Updated color palette with 20 colors

@@ -5,7 +5,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useNavigate, useLocation } from 'react-router-dom';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import axios from 'axios';
-import apiUrl from '../../config';
+import apiUrl from '../config'
 import { getCookie } from "../utils/utils";
 import { useSnackbar } from 'notistack';
 

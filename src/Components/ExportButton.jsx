@@ -1,5 +1,5 @@
 import React from 'react';
-import apiUrl from '../../config';
+import apiUrl from '../config';
 import Button from '@mui/material/Button';
 
 const ExportButton = () => {

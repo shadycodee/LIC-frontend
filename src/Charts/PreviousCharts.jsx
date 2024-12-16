@@ -11,7 +11,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import axios from 'axios';
-import apiUrl from '../../config';
+import apiUrl from '../config';
 import { Typography, Box } from '@mui/material';
 
 const COLORS = [
